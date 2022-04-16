@@ -1,0 +1,29 @@
+[
+    {
+        "id": 101,
+        "title": "baby patient",
+        "fee": 500,
+        "time": "(02:30pm- 07:30pm)",
+        "date": "Saturday to Monday",
+        "details": "There are special tests and medications for the baby. And is seen in a special way",
+        "img": "./picture/baby.png"
+    },
+    {
+        "id": 101,
+        "title": "Adult patient",
+        "fee": 1000,
+        "time": "(02:30pm - 07:30pm)",
+        "date": "tuesday to thursday",
+        "details": "Elderly patients are given advanced medical care by closely monitoring their body condition",
+        "img": "./picture/adult.png"
+    },
+    {
+        "id": 101,
+        "title": "regular patient",
+        "fee": 500,
+        "time": "(02:30pm - 07:30pm)",
+        "date": "tuesday to thursday",
+        "details": "We have up to 50% discount for older patients and some test discount up-to 30%",
+        "img": "./picture/regular.png"
+    }
+]
