@@ -4,11 +4,14 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 const Register = () => {
     const nameRef = useRef();
     const emailRef = useRef();
     const passRef = useRef();
     const confirmPassRef = useRef();
+    const navigate = useNavigate();
+
 
     const [
         createUserWithEmailAndPassword,
@@ -16,6 +19,12 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+
+
+    const handlenavigation = (event) => {
+        navigate('/login')
+        event.preventDefault();
+    }
 
     const handleSignUpForm = (event) => {
         const name = nameRef.current.value;
@@ -54,7 +63,7 @@ const Register = () => {
                 <button type="submit" className="btn btn-primary" style={{ backgroundColor: '#06ADEF' }}>Submit</button>
             </form>
             <>
-                <p className='mb-0'>have an account ?<a href='/'>Log In</a> </p>
+                <p className='mb-0'>have an account ?<a onClick={handlenavigation} href='/'>Log In</a> </p>
             </>
             <div className='d-flex align-items-center'>
                 <div style={{ height: '1px' }} className='w-50 bg-primary pl-1'></div> <p className='mt-2 p-2'>or</p> <div style={{ height: '1px' }} className='w-50 bg-primary'></div>

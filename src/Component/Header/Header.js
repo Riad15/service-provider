@@ -1,8 +1,14 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import logo from '../../images/nav-img.png'
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+    const [user] = useAuthState(auth);
+    const navigate = useNavigate();
     return (
         <>
             <Navbar style={{ backgroundColor: '#06ADEF' }} collapseOnSelect expand="lg" variant="dark">
@@ -22,10 +28,18 @@ const Header = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="/login">Log in</Nav.Link>
                             <Nav.Link eventKey={2} href="#memes">
                                 Dank memes
                             </Nav.Link>
+                            {
+                                user ?
+                                    <div className='d-flex'>
+                                        <Nav.Link onClick={() => signOut(auth)} href="/login">Log out</Nav.Link>
+                                    </div>
+
+                                    :
+                                    <Nav.Link href="/login">Log in</Nav.Link>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
