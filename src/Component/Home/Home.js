@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Footer/Footer';
 import useData from '../Hooks/useData';
 import Cover from './Cover/Cover';
 import Service from './Service/Service';
@@ -24,6 +25,7 @@ const Home = () => {
                     }
 
                 </div>
+                <Footer></Footer>
 
             </div>
 
