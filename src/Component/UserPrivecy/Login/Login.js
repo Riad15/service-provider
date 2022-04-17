@@ -22,11 +22,8 @@ const Login = () => {
     const handleSignIn = (event) => {
         const email = emailRef.current.value;
         const password = passRef.current.value;
-        if (user) {
-            window.alert('please try again!')
-        } else {
-            signInWithEmailAndPassword(email, password);
-        }
+        signInWithEmailAndPassword(email, password);
+        console.log(user);
         event.preventDefault();
     }
     return (
@@ -44,7 +41,7 @@ const Login = () => {
                 <button type="submit" class="btn btn-primary" style={{ backgroundColor: '#06ADEF' }}>Submit</button>
             </form>
             <>
-                <p className='mb-0'>New Member ?<a onClick={handlenavigation} href=''>register</a> </p>
+                <p className='mb-0'>New Member ?<a onClick={handlenavigation} href='/'>register</a> </p>
             </>
             <div className='d-flex align-items-center'>
                 <div style={{ height: '1px' }} className='w-50 bg-primary pl-1'></div> <p className='mt-2 p-2'>or</p> <div style={{ height: '1px' }} className='w-50 bg-primary'></div>

@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const [user] = useAuthState(auth);
-    const navigate = useNavigate();
+
     return (
         <>
             <Navbar style={{ backgroundColor: '#06ADEF' }} collapseOnSelect expand="lg" variant="dark">
