@@ -16,6 +16,9 @@ const Login = () => {
                 </div>
                 <button type="submit" class="btn btn-primary" style={{ backgroundColor: '#06ADEF' }}>Submit</button>
             </form>
+            <>
+                <p className='mb-0'>New Member ?<a href='/'>register</a> </p>
+            </>
             <div className='d-flex align-items-center'>
                 <div style={{ height: '1px' }} className='w-50 bg-primary pl-1'></div> <p className='mt-2 p-2'>or</p> <div style={{ height: '1px' }} className='w-50 bg-primary'></div>
             </div>

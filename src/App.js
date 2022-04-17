@@ -5,6 +5,7 @@ import Header from './Component/Header/Header';
 import Home from './Component/Home/Home';
 import { Route, Routes } from 'react-router-dom';
 import Login from './Component/UserPrivecy/Login/Login';
+import Register from './Component/UserPrivecy/Register/Register';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
       </Routes>
     </div>
   );
