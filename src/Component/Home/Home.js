@@ -13,7 +13,7 @@ const Home = () => {
             </div>
             <Cover></Cover>
             <div>
-                <h1 style={{ color: '#06ADEF' }} className='text-center'>Service Feature</h1>
+                <h1 id='services' style={{ color: '#06ADEF' }} className='text-center'>Service Feature</h1>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
                         data.map(data =>

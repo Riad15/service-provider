@@ -7,6 +7,9 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Component/UserPrivecy/Login/Login';
 import Register from './Component/UserPrivecy/Register/Register';
 import Schedule from './Component/Schedule/Schedule';
+import Service from './Component/Home/Service/Service';
+import NotFound from './Component/Schedule/NotFound/NotFound';
+import RequiarAuth from './Component/UserPrivecy/Login/RequiarAuth';
 
 function App() {
   return (
@@ -15,9 +18,15 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/home/service' element={<Service></Service>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/schedule/:id' element={<Schedule></Schedule>}></Route>
+        <Route path='/schedule/:id' element={
+          <RequiarAuth>
+            <Schedule></Schedule>
+          </RequiarAuth>
+        }></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
   );
