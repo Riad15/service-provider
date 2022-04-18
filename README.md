@@ -1,19 +1,26 @@
-# Getting Started with Create React App
+## doctor_Scheduling
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+you can visit [doctor-scheduling](https://doctor-appointment-b5adb.firebaseapp.com/).
 
-## Available Scripts
+## working_Procidure
 
-In the project directory, you can run:
+### creat-react-app 
+### create-json_API
+### load-data_using_coustom_hooks
+### create-simple-responsive-navbar
+### show-home-page-service-information
+### cover-carusel
+### private-route
+### login-registration-form
+### 
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
+## using-library-to-build-my-project
+(i) using google firebase fora uthentication
+(ii) using react firebase hooks
+(iii) using requireAuth react hooks
+(iv) react router
+(V) tostify
+(VI) bootstrap5 
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
@@ -39,11 +46,11 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## appointment- Scheduling
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can visit this website[doctor-Scheduling](https://doctor-appointment-b5adb.firebaseapp.com/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
 
 ### Code Splitting
 
