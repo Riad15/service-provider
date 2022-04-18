@@ -14,6 +14,9 @@ const GoogleSignIn = () => {
     if (error) {
         window.alert(error);
     }
+    if (loading) {
+        <p className='text-center'>Loading...</p>;
+    }
 
     if (user) {
         navigate('/home');

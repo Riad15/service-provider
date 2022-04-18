@@ -1,45 +1,60 @@
 import React, { useRef } from 'react';
 import GoogleSignIn from '../GoogleSignIn';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../../Footer/Footer';
+
+
+
 const Register = () => {
     const nameRef = useRef();
     const emailRef = useRef();
     const passRef = useRef();
     const confirmPassRef = useRef();
-    const navigate = useNavigate();
-
-
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const navigate = useNavigate();
 
+    if (error) {
+        alert(error);
+    }
+    if (updateError) {
+        alert(updateError);
+    }
 
+    if (user) {
+        navigate('/home');
+    }
+    if (loading || updating) {
+        <p className='text-center'>loading...</p>
+    }
     const handlenavigation = (event) => {
         navigate('/login')
         event.preventDefault();
     }
 
-    const handleSignUpForm = (event) => {
+    const handleSignUpForm = async (event) => {
+        event.preventDefault();
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passRef.current.value;
         const confirmPassword = confirmPassRef.current.value;
         if (password === confirmPassword) {
-            createUserWithEmailAndPassword(email, password);
-            toast('successful your account');
-
+            await createUserWithEmailAndPassword(email, password);
+            await updateProfile({ displayName: name });
+            alert('successful create your account');
+            navigate('/home');
         } else {
-            window.alert('your passWord not match.')
+            toast('your passWord not match.')
         }
-        event.preventDefault();
+
     }
     return (
         <div className='container'>

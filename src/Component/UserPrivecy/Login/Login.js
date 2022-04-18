@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import Footer from '../../Footer/Footer';
 import GoogleSignIn from '../GoogleSignIn';
 
 const Login = () => {
@@ -20,21 +21,24 @@ const Login = () => {
         event.preventDefault();
     }
     if (error) {
-        window.alert(error);
+        alert(error);
     }
     if (loading) {
         <p className='text-center'>Loading...</p>;
     }
     if (user) {
-        navigate('/home')
+        toast('login succesfull');
+        navigate('/home');
     }
+
+
     const handleSignIn = (event) => {
         const email = emailRef.current.value;
         const password = passRef.current.value;
         signInWithEmailAndPassword(email, password);
-        console.log(user);
         event.preventDefault();
     }
+
     return (
         <div className='container'>
             <div className='w-50 mx-auto border rounded mt-3'>
@@ -57,6 +61,7 @@ const Login = () => {
                     <div style={{ height: '1px' }} className='w-50 bg-primary pl-1'></div> <p className='mt-2 p-2'>or</p> <div style={{ height: '1px' }} className='w-50 bg-primary'></div>
                 </div>
                 <GoogleSignIn></GoogleSignIn>
+                <ToastContainer />
 
             </div>
         </div>
