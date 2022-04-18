@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import GoogleSignIn from '../GoogleSignIn';
 
@@ -10,6 +10,8 @@ const Login = () => {
     const emailRef = useRef('');
     const passRef = useRef('');
     const navigate = useNavigate('');
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/shop';
     const [
         signInWithEmailAndPassword,
         user,
@@ -28,7 +30,7 @@ const Login = () => {
         <p className='text-center'>Loading...</p>;
     }
     if (user) {
-        toast('login succesfull');
+        toast(from, { replace: true });
         navigate('/home');
     }
 
