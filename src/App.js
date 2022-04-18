@@ -10,6 +10,8 @@ import Schedule from './Component/Schedule/Schedule';
 import Service from './Component/Home/Service/Service';
 import NotFound from './Component/Schedule/NotFound/NotFound';
 import RequiarAuth from './Component/UserPrivecy/Login/RequiarAuth';
+import Blog from './Component/Blog/Blog';
+import About from './Component/About/About';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
         <Route path='/home/service' element={<Service></Service>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
